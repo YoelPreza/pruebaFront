@@ -26,7 +26,7 @@ export default function TaskForm() {
   }, [params.id]);
 
   const loadTask = async (id) => {
-    const res = await fetch("http://localhost:4000/tasks/" + id);
+    const res = await fetch("https://pruebaback.up.railway.app/tasks/" + id);
     const data = await res.json();
     setUser({ user_id: data.user_id, user_name: data.user_name, date: data.date, punch_in: data.punch_in, punch_out: data.punch_out });
     setEditing(true);
@@ -39,7 +39,7 @@ export default function TaskForm() {
 try {
   if(editing){
     const response = await fetch(
-      "http://localhost:4000/tasks/" + params.id,
+      "https://pruebaback.up.railway.app/tasks/" + params.id,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -48,7 +48,7 @@ try {
     );
     await response.json();
   } else {
-    const response = await fetch('http://localhost:4000/tasks',{
+    const response = await fetch('https://pruebaback.up.railway.app/tasks',{
       method: 'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(user),

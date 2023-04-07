@@ -36,7 +36,7 @@ function UploadFile() {
   };
 
   const handleFileSubmit = () => {
-    axios.post('http://localhost:4000/insert-datos', jsonData)
+    axios.post('https://pruebaback.up.railway.app/insert-datos', jsonData)
       .then(response => {
         console.log(response);
       })
