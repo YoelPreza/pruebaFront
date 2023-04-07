@@ -6,6 +6,10 @@ import './TaskList.scss'
 export default function TaskList() {
   const [user, setUser] = useState([]);
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    loadTasks()
+  }, [])
 
   const loadTasks = async () => {
     const response = await fetch('https://pruebaback.up.railway.app/tasks')
@@ -24,10 +28,7 @@ export default function TaskList() {
     }
   };
 
-  useEffect(() => {
-    loadTasks()
-  }, [])
-console.log("pase por el effect")
+
   return (
     <div className='mainContent'>
       <div className='content'>
