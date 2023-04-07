@@ -50,7 +50,7 @@ console.log("pase por el effect")
             <div className='divFilasName'>
               <span> {user.user_name} </span>
             </div>
-            <span> {user.date.slice(0, 10)} </span>
+            <span> {user.date?.slice(0, 10)} </span>
             <span> {user.punch_in} </span>
             <span> {user.punch_out} </span>
 
