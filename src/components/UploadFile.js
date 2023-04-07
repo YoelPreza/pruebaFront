@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { read, utils } from 'xlsx';
-import { Link } from 'react-router-dom';
 import './Upload.scss'
+import Swal from 'sweetalert2'
+
 
 function UploadFile() {
 
@@ -30,6 +31,13 @@ function UploadFile() {
     reader.readAsBinaryString(file);
   };
 
+  const showAlert = ()=>{
+    Swal.fire({
+    title: "File Excel Uploaded",
+    icon: "success",
+    footer: "<b>Please click User views</b>"
+    })
+}
   const handleFileSubmit = async () => {
     try {
       const response = await fetch('https://pruebaback.up.railway.app/insert-datos', {
@@ -38,18 +46,11 @@ function UploadFile() {
         body: JSON.stringify(jsonData),
       })
       await response.json();
-      
+      showAlert();
     } catch (error) {
       console.error(error);
       
     }
-  //  await axios.post('https://pruebaback.up.railway.app/insert-datos', jsonData)
-  //     .then(response => {
-  //       console.log(response);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
   };
 
 
@@ -70,17 +71,18 @@ function UploadFile() {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
   };
 
+
   return (
     <div className='container'>
       <div className='upload'>
         <h1>Please Upload Your Excel File!</h1>
         <input className='input' type="file" accept=".xlsx" onChange={handleFileUpload} />
-        <Link to={'/tasks/view'}>
+        {/* <Link to={'/tasks/view'}> */}
 
           <button
             className="boton"
             onClick={handleFileSubmit}>Subir archivo</button>
-        </Link>
+        {/* </Link> */}
       </div>
     </div>
   );
