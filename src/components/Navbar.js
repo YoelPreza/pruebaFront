@@ -7,30 +7,30 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    
-      <div className="navbar">
-              <Link to="/" >
-                <img className="img" src={logo} alt="logo" />
-              </Link>
-<div>
+
+    <div className="navbar">
+      <Link to="/" >
+        <img className="img" src={logo} alt="logo" />
+      </Link>
+      <div>
 
 
-            <button
-            className="boton"
-              onClick={() => navigate("/tasks/view")}
-            >
-              View File
-            </button>
+        <button
+          className="boton"
+          onClick={() => navigate("/tasks/view")}
+        >
+          View File
+        </button>
 
-            <button
-            className="boton"
+        <button
+          className="boton"
 
-              onClick={() => navigate("/tasks/new")}
-            >
-              New User
-            </button>
-</div>
-
+          onClick={() => navigate("/tasks/new")}
+        >
+          New User
+        </button>
       </div>
+
+    </div>
   )
 }
