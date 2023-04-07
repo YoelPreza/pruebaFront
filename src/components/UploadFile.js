@@ -35,7 +35,7 @@ function UploadFile() {
     Swal.fire({
     title: "File Excel Uploaded",
     icon: "success",
-    footer: "<b>Please click User views</b>"
+    footer: "<b>Please click on View File</b>"
     })
 }
   const handleFileSubmit = async () => {
@@ -77,12 +77,10 @@ function UploadFile() {
       <div className='upload'>
         <h1>Please Upload Your Excel File!</h1>
         <input className='input' type="file" accept=".xlsx" onChange={handleFileUpload} />
-        {/* <Link to={'/tasks/view'}> */}
 
           <button
             className="boton"
             onClick={handleFileSubmit}>Subir archivo</button>
-        {/* </Link> */}
       </div>
     </div>
   );
