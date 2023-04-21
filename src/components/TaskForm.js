@@ -82,7 +82,8 @@ export default function TaskForm() {
           }}
         >
           <Typography varaiant='5' textAlign='center'> Create User </Typography>
-          <CardContent>
+              
+          <CardContent sx={{mt:8}}  >
             <form onSubmit={handleSubmit}>
               <TextField
                 variant='filled'
@@ -94,6 +95,8 @@ export default function TaskForm() {
                 name="user_id"
                 onChange={handleChange}
                 value={user.user_id}
+                helperText= "Type: 0018"
+
               />
 
               <TextField
@@ -106,7 +109,7 @@ export default function TaskForm() {
                 name="user_name"
                 onChange={handleChange}
                 value={user.user_name}
-
+                helperText= "Type: Isis Yoel Preza Del Razo"
               />
 
               <TextField
@@ -119,6 +122,8 @@ export default function TaskForm() {
                 name="date"
                 onChange={handleChange}
                 value={user.date.slice(0, 10)}
+                helperText= "Type: YYYY-MM-DD"
+
               />
 
               <TextField
@@ -131,6 +136,7 @@ export default function TaskForm() {
                 name="punch_in"
                 onChange={handleChange}
                 value={user.punch_in}
+                helperText= "Type: 08:00"
 
               />
 
@@ -144,9 +150,13 @@ export default function TaskForm() {
                 name="punch_out"
                 onChange={handleChange}
                 value={user.punch_out}
+                helperText= "Type: 16:00"
 
               />
-              <Button variant='contained' color='primary' type='submit' disabled={!user.user_id || !user.user_name || !user.date || !user.punch_in || !user.punch_out}>
+              <Button variant='contained' color='primary' type='submit' disabled={!user.user_id || !user.user_name || !user.date || !user.punch_in || !user.punch_out}
+              sx={{mt:1, backgroundColor:"rgb(159, 62, 69)"}}
+              style={{ height: '55px', width: '80px' }}
+              >
                 {loading ? (
                   <CircularProgress />
                 ) : (

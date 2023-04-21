@@ -18,12 +18,23 @@
         margin-left: 20px;
     }
 
+    .boton1 {
+        background-color: $Black;
+        border: none;
+        height: 40px;
+        width: 100px;
+        margin-right: 10px;
+        color: $White;
+        cursor: pointer;
+    }
+
     .boton {
         background-color: $Rojo;
         border: none;
         height: 40px;
         width: 100px;
         margin-right: 10px;
+        color: $Black;
         cursor: pointer;
     }
 }

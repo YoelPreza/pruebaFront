@@ -16,7 +16,7 @@ export default function Navbar() {
 
 
         <button
-          className="boton"
+          className="boton1"
           onClick={() => navigate("/tasks/view")}
         >
           View File

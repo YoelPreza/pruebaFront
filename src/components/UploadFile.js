@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { read, utils } from 'xlsx';
+import { read, utils } from 'xlsx'; 
 import './Upload.scss'
 import Swal from 'sweetalert2'
 
@@ -42,8 +42,8 @@ function UploadFile() {
     try {
       const response = await fetch('https://pruebaback.up.railway.app/insert-datos', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(jsonData),
+        headers: { 'Content-Type': 'application/json' }, // para que sepa de que maner procesar la info
+        body: JSON.stringify(jsonData), // convertirlo en json antes de enviarlo
       })
       await response.json();
       showAlert();
